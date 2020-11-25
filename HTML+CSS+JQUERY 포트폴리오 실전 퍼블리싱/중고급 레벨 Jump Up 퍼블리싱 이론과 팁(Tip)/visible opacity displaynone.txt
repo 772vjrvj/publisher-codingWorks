@@ -1,0 +1,7 @@
+
+속성	collapse	이벤트 적용	tab-order 적용
+opacity: 0;	X	O	O
+visibility: hidden;	X	X	X
+display: none;	O	X	X
+
+opacity: 0 주고 pointer-events: none; 해도됨
