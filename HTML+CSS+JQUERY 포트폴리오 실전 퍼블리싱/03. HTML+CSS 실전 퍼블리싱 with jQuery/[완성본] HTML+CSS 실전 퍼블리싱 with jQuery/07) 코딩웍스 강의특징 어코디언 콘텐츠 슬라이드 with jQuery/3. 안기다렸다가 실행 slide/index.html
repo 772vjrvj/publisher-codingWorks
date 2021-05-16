@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
+
   <section>
     <article>
       <div class="heading">
@@ -28,8 +28,6 @@
             당장의 화려함 보다 탄탄한 이론이 필수
           </div>
           <div class="desc" style="display: none;padding: 15px";>
-            당장의 화려함에 제이쿼리 플러그인 사용에 의존하고 기본기 학습을 충실히 하지 않으면 웹 퍼블리셔로 취업하기 쉽지 않습니다. 설령 취업해서 실무에서 일하게 되더라도 퍼블리셔로서 어려운 하루 하루가 될 가능성이 높습니다. <br><br>
-            코드 한줄 한줄 직접 코딩하는 곧, 하드 코딩할 수 있는게 진짜 실력이고 진짜 퍼블리싱 실력입니다.
             당장의 화려함에 제이쿼리 플러그인 사용에 의존하고 기본기 학습을 충실히 하지 않으면 웹 퍼블리셔로 취업하기 쉽지 않습니다. 설령 취업해서 실무에서 일하게 되더라도 퍼블리셔로서 어려운 하루 하루가 될 가능성이 높습니다. <br><br>
             코드 한줄 한줄 직접 코딩하는 곧, 하드 코딩할 수 있는게 진짜 실력이고 진짜 퍼블리싱 실력입니다.
           </div>
@@ -56,18 +54,12 @@
   </section>
 
   <script>
-    
+
     const titles = document.querySelectorAll('.title');
     const descs = document.querySelectorAll('.desc');
-    let chk = true;
-    let supIdx = 0;
     [...titles].forEach((title, idx) => {
       title.addEventListener('click', () => {
-        if(chk && supIdx !== idx){
-          supIdx = idx;
-          chk = false;
-          clickFn(title, idx);
-        }
+        clickFn(title, idx);
       });
     });
 
@@ -77,9 +69,10 @@
       title.classList.add('active');
 
 
-      const sibs = [...descs]; 
+      const sibs = [...descs];
       const findSib2 = sibs.find(sib2 => sib2.style.display ==='block');
-      findSib2.setAttribute('data-offsetHeight', findSib2.offsetHeight);
+      // findSib2.setAttribute('data-offsetHeight', findSib2.offsetHeight);
+
       slideUp(findSib2);
 
       const curSib = sibs[idx];
@@ -89,6 +82,7 @@
       document.querySelector('.image img').setAttribute('src',dataImage);
 
     }
+
 
 
     let slideUp = (target, duration=500) => {
@@ -146,7 +140,6 @@
         target.style.removeProperty('overflow');
         target.style.removeProperty('transition-duration');
         target.style.removeProperty('transition-property');
-        chk = true;
       }, duration);
     }
 

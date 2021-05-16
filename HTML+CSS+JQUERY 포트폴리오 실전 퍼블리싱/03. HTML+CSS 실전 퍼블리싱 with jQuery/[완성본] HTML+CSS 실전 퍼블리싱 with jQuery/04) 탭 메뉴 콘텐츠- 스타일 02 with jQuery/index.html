@@ -63,14 +63,34 @@
   </section>
 
   <script>
-    $('.btn li').click(function(){
-      $(this).addClass('active')
-      $(this).siblings().removeClass('active')
+    // $('.btn li').click(function(){
+    //   $(this).addClass('active')
+    //   $(this).siblings().removeClass('active')
 
-      var result = $(this).attr('data-alt')
-      $('.tabs div').removeClass('active')
-      $('#' + result).addClass('active')
-    })
+    //   var result = $(this).attr('data-alt')
+    //   $('.tabs div').removeClass('active')
+    //   $('#' + result).addClass('active')
+    // })
+
+    const btns = document.querySelectorAll('.btn li');
+    btns.forEach((btn, idx, ary) => {
+      btn.addEventListener('click', () => {
+
+        //기존 버튼과 tab의 active를 제거
+        const findBtn = [...ary].find((inBtn, inIdx) => inBtn.className === 'active');
+        findBtn.classList.remove('active');
+        const findTab = document.getElementById(findBtn.getAttribute('data-alt'));
+        findTab.classList.remove('active');
+
+        //클릭한 버튼과 tab에 active를 추가
+        btn.classList.add('active');
+        const findBtnTab = document.getElementById(btn.getAttribute('data-alt'));
+        findBtnTab.classList.add('active');
+      })
+    });
+
+
+
   </script>
   
 </body>

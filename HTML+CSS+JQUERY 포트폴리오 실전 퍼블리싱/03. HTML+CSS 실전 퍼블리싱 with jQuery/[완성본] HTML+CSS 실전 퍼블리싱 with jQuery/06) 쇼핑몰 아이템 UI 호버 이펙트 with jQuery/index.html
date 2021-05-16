@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
+
   <div class="item">
     <img src="images/model-female.png">
     <div class="detail">
@@ -49,7 +49,7 @@
     //   });
     // }); 됨!
 
-    const sizes = document.querySelectorAll('.size span');
+    const sizes = document.querySelectorAll('.size span, .color span');
     [...sizes].forEach(size => {
       size.addEventListener('click', ()=> {
         const findSib = [...sizes].find(sib => sib.classList.contains('active'));
@@ -60,16 +60,16 @@
       });
     });
 
-    const colors = document.querySelectorAll('.color span');
-    [...colors].forEach(color => {
-      color.addEventListener('click', ()=> {
-        const findSib = [...colors].find(sib => sib.classList.contains('active'));
-        if(findSib){
-          findSib.classList.remove('active');
-        }
-        color.classList.add('active');
-      });
-    });
+    // const colors = document.querySelectorAll('.color span');
+    // [...colors].forEach(color => {
+    //   color.addEventListener('click', ()=> {
+    //     const findSib = [...colors].find(sib => sib.classList.contains('active'));
+    //     if(findSib){
+    //       findSib.classList.remove('active');
+    //     }
+    //     color.classList.add('active');
+    //   });
+    // });
 
     const like = document.querySelector('.like');
 
@@ -85,6 +85,6 @@
     //   $(this).toggleClass('active')
     // });
   </script>
-  
+
 </body>
 </html>

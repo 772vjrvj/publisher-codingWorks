@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
+
   <section>
     <article>
       <div class="heading">
@@ -54,24 +54,42 @@
   </section>
 
   <script>
-    
+
+    // const titles = document.querySelectorAll('.title');
+    // const descs = document.querySelectorAll('.desc');
+    // const image = document.querySelector('.image img');
+    // [...titles].forEach((title, idx) => {
+    //   title.addEventListener('click', (e) => {
+    //     e.preventDefault();
+    //     const findSib1 = [...titles].find(sib1 => sib1.classList.contains('active'));
+    //     findSib1.classList.remove('active');
+    //     title.classList.add('active');
+    //
+    //     const findSib2 = [...descs].find(sib2 => sib2.classList.contains('active'));
+    //     findSib2.classList.remove('active');
+    //     [...descs][idx].classList.add('active');
+    //
+    //     const dataImage = title.getAttribute('data-image');
+    //     image.setAttribute('src', dataImage);
+    //
+    //   });
+    // });
+
     const titles = document.querySelectorAll('.title');
-    const descs = document.querySelectorAll('.desc');
-    [...titles].forEach((title, idx) => {
-      title.addEventListener('click', (e) => {
-        e.preventDefault();
-        const findSib1 = [...titles].find(sib1 => sib1.classList.contains('active'));
-        findSib1.classList.remove('active');
+    const image = document.querySelector('.image img');
+    titles.forEach((title,titleIndex, titleArray) => {
+      title.addEventListener('click',() => {
+        const findTitle = [...titleArray].find((item,index) => item.classList.contains('active'));
+        findTitle.classList.remove('active');
+        findTitle.nextElementSibling.classList.remove('active');
         title.classList.add('active');
-
-
-        const findSib2 = [...descs].find(sib2 => sib2.classList.contains('active'));
-
-        findSib2.classList.remove('active');
-        [...descs][idx].classList.add('active');
-
+        title.nextElementSibling.classList.add('active');
+        const dataAlt = title.getAttribute('data-image');
+        image.setAttribute('src',dataAlt);
       });
     });
+
+
 
 
 

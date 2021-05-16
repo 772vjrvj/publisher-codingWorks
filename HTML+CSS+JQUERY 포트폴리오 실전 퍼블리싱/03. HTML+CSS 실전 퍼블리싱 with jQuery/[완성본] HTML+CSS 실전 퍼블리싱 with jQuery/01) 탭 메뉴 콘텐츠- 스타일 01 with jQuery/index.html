@@ -49,6 +49,7 @@
 
 
     const imgs = document.querySelectorAll('.testimonial-pic img');
+    const contents = document.querySelectorAll('.testimonial .content');
 
     [...imgs].forEach( img => {
 
@@ -61,8 +62,7 @@
         const findSib = [...imgs].find((sib) => sib.classList.contains('active'));
         findSib.classList.remove('active');
         img.classList.add('active');
-
-        const contents = document.querySelectorAll('.testimonial .content');
+        
         const findContent = [...contents].find(content => content.classList.contains('active'));
         findContent.classList.remove('active');
 
@@ -72,6 +72,42 @@
 
       });
     });
+
+
+
+    // const imgs = document.querySelectorAll('.testimonial-pic img');
+    // const contents = document.querySelectorAll('.testimonial .content');
+  
+    // imgs.forEach((img, imgIdx, imgAry) => {
+    //   img.addEventListener('click', () => {
+
+    //     imgAry.forEach((innerImg, innerIdx) => {
+    //       if(innerIdx !== imgIdx) {
+    //         innerImg.classList.remove('active');
+    //       }else{
+    //         innerImg.classList.add('active');
+    //       }
+    //     });
+
+    //     // conts.forEach((cont, contIdx, contAry) => {
+    //     //   if(imgIdx !== contIdx){
+    //     //     cont.classList.remove('active');
+    //     //   }else{
+    //     //     cont.classList.add('active');
+    //     //   }
+    //     // });
+
+    //     contents.forEach((cont, contIdx, contAry) => {
+    //       if(img.getAttribute('alt') !== cont.id){
+    //         cont.classList.remove('active');
+    //       }else{
+    //         cont.classList.add('active');
+    //       }
+    //     });
+
+
+    //   });
+    // })
 
 
  
